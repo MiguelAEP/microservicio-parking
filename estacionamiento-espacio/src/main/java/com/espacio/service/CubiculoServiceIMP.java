@@ -42,4 +42,20 @@ public class CubiculoServiceIMP implements CubiculoService{
     public List<Cubiculo> showAllCubiculoFalse() {
         return cubiculoRepository.findCubiculosNoOcupados();
     }
+
+    @Override
+    public void busyToFreeParking(Long id) {
+        //CAMBIA EL ESTADO DE OCUPADO A DESOCUPADO
+        Cubiculo cubiculo = findyCubiculoById(id);
+        cubiculo.setOcupado(false);
+        cubiculoRepository.save(cubiculo);
+    }
+
+    @Override
+    public void freeToBusyParking(Long id) {
+        //CAMBIA EL ESTADO DE LIBRE A OCUPADO
+        Cubiculo cubiculo = findyCubiculoById(id);
+        cubiculo.setOcupado(true);
+        cubiculoRepository.save(cubiculo);
+    }
 }

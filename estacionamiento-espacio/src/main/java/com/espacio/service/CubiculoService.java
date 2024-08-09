@@ -11,4 +11,6 @@ public interface CubiculoService {
     Cubiculo findyCubiculoById(Long id);
     Boolean knowStatusOcupadoById(Long id);
     List<Cubiculo> showAllCubiculoFalse();
+    void busyToFreeParking(Long id);
+    void freeToBusyParking(Long id);
 }

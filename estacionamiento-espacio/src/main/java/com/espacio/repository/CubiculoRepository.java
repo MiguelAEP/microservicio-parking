@@ -19,4 +19,6 @@ public interface CubiculoRepository extends JpaRepository<Cubiculo,Long> {
     @Query("SELECT c FROM Cubiculo c WHERE c.ocupado = false")
     List<Cubiculo> findCubiculosNoOcupados();
 
+
+
 }

@@ -42,5 +42,15 @@ public class CubiculoController {
         return cubiculoService.showAllCubiculoFalse();
     }
 
+    @GetMapping("/busyToFreeParking/{id}")
+    public void busyToFreeParking(@PathVariable Long id){
+        cubiculoService.busyToFreeParking(id);
+    }
+
+    @GetMapping("/freeToBusyParking/{id}")
+    public void freeToBusyParking(@PathVariable Long id){
+        cubiculoService.freeToBusyParking(id);
+    }
+
 
 }

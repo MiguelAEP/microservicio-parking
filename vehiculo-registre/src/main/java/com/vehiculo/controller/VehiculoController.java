@@ -7,9 +7,11 @@ import com.vehiculo.entity.UserVehicule;
 import com.vehiculo.services.VehiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/vehicule")
@@ -35,6 +37,12 @@ public class VehiculoController {
     @GetMapping("/showFreeCubiculo")
     public List<CubiculoDTO> listAllCubiculeFree(){
         return vehiculoService.showFreeCubicule();
+    }
+
+    @GetMapping("/busyToFreeParking/{id}")
+    public ResponseEntity<Map<String, Integer>> leaveTheParking(@PathVariable Long id){
+        Map<String, Integer> response = vehiculoService.leaveTheParking(id);
+        return ResponseEntity.ok(response);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

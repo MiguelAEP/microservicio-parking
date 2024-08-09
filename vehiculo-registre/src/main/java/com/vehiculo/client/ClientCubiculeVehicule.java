@@ -16,4 +16,13 @@ public interface ClientCubiculeVehicule {
     @GetMapping("/freeCubicule")
     public List<CubiculoDTO> listCubiculeFalse();
 
+    @GetMapping("/busyToFreeParking/{id}")
+    public void busyToFreeParking(@PathVariable Long id);
+
+
+    @GetMapping("/freeToBusyParking/{id}")
+    public void freeToBusyParking(@PathVariable Long id);
+
+    @GetMapping("/{id}")
+    public CubiculoDTO findByIdCubiculo(@PathVariable Long id);
 }
