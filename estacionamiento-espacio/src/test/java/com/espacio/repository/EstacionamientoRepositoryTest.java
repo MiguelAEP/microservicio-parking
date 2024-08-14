@@ -82,4 +82,7 @@ public class EstacionamientoRepositoryTest {
         assertThat(cubiculo.isOcupado()).isEqualTo(true);
     }
 
+
+
+
 }
